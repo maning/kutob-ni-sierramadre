@@ -1,0 +1,5 @@
+.DS_Store
+.creds/*
+.env/*
+tmp/*
+.ipynb_checkpoints/*
