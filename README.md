@@ -2,7 +2,7 @@
 
 ## About
 
-A collection of jupyter notebook to analyze sensor data from DOST's weather and stream/river monitoring stations.
+A collection of Jupyter notebook to analyze sensor data from DOST's weather and stream/river monitoring stations.
 The data was [collected](https://github.com/mbasa/dostSensor/) from the old Project NOAH API.  It contains over 30 million records between 2013-2015.
 
 ## Setup
@@ -18,14 +18,13 @@ virtualenv -p python3 .env
 pip3 install -r requirements.txt
 
 # Run jupyter notebook
-
 jupyter notebook
 ```
 
 ## TOC
 
 * [Loading CSVs to AWS Athena](loading-to-athena.ipynb).
-* [Connecting Athena database to jupyter notebook](athena-to-pandas.ipynb).
+* [WIP][Connecting Athena to Jupyter notebook](athena-to-pandas.ipynb).
 
 ### What's in a name
 
