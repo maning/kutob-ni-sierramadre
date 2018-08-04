@@ -24,7 +24,8 @@ jupyter notebook
 ## TOC
 
 * [Loading CSVs to AWS Athena](loading-to-athena.ipynb).
-* [WIP][Connecting Athena to Jupyter notebook](athena-to-pandas.ipynb).
+* [Connecting Athena to Jupyter notebook](athena-to-pandas.ipynb).
+* [WIP] Rainfall and water level event in Marikina watershed.
 
 ### What's in a name
 
