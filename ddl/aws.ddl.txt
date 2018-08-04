@@ -1,0 +1,28 @@
+---aws - automated weather station 
+---name - name of station
+---time - time of record
+---temp - temperature (degrees celsius)
+---humi - humidity
+---pres - pressure
+---rain - rainfall (in mm)
+---lon - longitude of station
+---lat - latitude of station
+
+CREATE EXTERNAL TABLE IF NOT EXISTS dostsensor.aws (
+  `id` int,
+  `name` string,
+  `time` string,
+  `temp` decimal(10,6),
+  `humi` decimal(10,6),
+  `pres` decimal(10,6),
+  `rain` decimal(10,6),
+  `lon` decimal(10,6),
+  `lat` decimal(10,6)
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'
+WITH SERDEPROPERTIES (
+  'serialization.format' = ',',
+  'field.delim' = ','
+) LOCATION 's3://dostsensor-db/aws/'
+TBLPROPERTIES ('has_encrypted_data'='false',
+               "skip.header.line.count"="1");

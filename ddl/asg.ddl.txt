@@ -1,0 +1,30 @@
+---asg - stream gauge 
+---name - name of station
+---time - time of record
+---value - water level in meters
+---water_level_change - +/-  change of water level in meter
+---time_difference - time difference from previous reading
+---lon - longitude of station
+---lat - latitude of station
+
+CREATE EXTERNAL TABLE IF NOT EXISTS dostsensor.asg (
+  `id` int, 
+  `name` string, 
+  `time` string, 
+  `value` decimal(10,6), 
+  `water_level_change` decimal(10,6), 
+  `time_difference` decimal(10,6), 
+  `lon` decimal(10,6), 
+  `lat` decimal(10,6)
+  )
+ROW FORMAT DELIMITED 
+  FIELDS TERMINATED BY ',' 
+STORED AS INPUTFORMAT 
+  'org.apache.hadoop.mapred.TextInputFormat' 
+OUTPUTFORMAT 
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+  's3://dostsensor-db/asg'
+TBLPROPERTIES (
+  'has_encrypted_data'='false', 
+  'skip.header.line.count'='1')
